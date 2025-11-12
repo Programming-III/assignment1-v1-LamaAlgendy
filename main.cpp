@@ -37,9 +37,9 @@ this-> isHungry=isHungry;
 
     void Animal:: display(){
     cout<<name<<"(Age:"<<age<<","<<
-    if (isHungry)
+{  if (isHungry)
         cout<<"Hungry)"<< endl;
-        else cout<< "Not Hungry)"<<endl;
+        else cout<< "Not Hungry)"<<endl;}
     }
 
     void Animal:: feed(){
@@ -54,7 +54,7 @@ this-> isHungry=isHungry;
     int Mammal:: getAge(){
         return age;
         }
-    bool Mammal:: GetHungry(){
+    bool Mammal:: getHungry(){
         return isHungry;
         }
    Mammal:: Mammal():Animal(){
@@ -67,7 +67,9 @@ this-> isHungry=isHungry;
     Mammal :: ~Mammal(){
     }
 
-    Bird::Bird():Animal(){wingSpan=0;}
+    Bird::Bird():Animal(){
+        wingSpan=0;
+    }
 
     Bird:: Bird(string name,int age,bool isHungry,float wingSpan):Animal(name,age,isHungry){
         this->wingSpan=wingSpan;
@@ -93,7 +95,7 @@ this-> isHungry=isHungry;
     this->currentCount=currentCount;
         animal=new Animal[capacity];
     }
-    Enclosure :: void addAnimal(Animal* a){
+   void Enclosure ::  addAnimal(Animal* a){
         if(capacity<currentCount){
             animal[currentCount]=a;
             currentCount++;
@@ -103,7 +105,7 @@ this-> isHungry=isHungry;
         }
 
     }
-    Enclosure :: void displayAnimals(){
+    void Enclosure :: displayAnimals(){
         cout<< "Enclosure 1 Animal: "<< endl;
         for(int i=0;i>currentCount;i++)
          animal[i].display();
@@ -124,7 +126,7 @@ this-> isHungry=isHungry;
 
     Visitor::~Visitor(){
     }
-    void Visitor:: displayinfo(){
+    void Visitor:: displayInfo(){
     cout<<"Visitor Info:"<<endl;
     cout<<"Name: "<<visitorName<<endl;
     cout<<"Tickets Bought: "<< ticketsBought<< endl;
