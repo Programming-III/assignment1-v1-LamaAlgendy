@@ -14,7 +14,7 @@ public:
     Visitor();
     Visitor(string visitorName, int ticketBought);
     ~Visitor();
-    void displayinfo();
+    void displayInfo();
 
 };
 
